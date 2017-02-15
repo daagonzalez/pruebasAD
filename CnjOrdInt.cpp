@@ -1,7 +1,7 @@
-/* 
+/*
  * File:   CnjOrdInt.cpp
  * Author: alan.calderon
- * 
+ *
  * Created on 5 de agosto de 2015, 05:37 PM
  */
 
@@ -15,7 +15,13 @@ CnjOrdInt::CnjOrdInt(const CnjOrdInt& orig) {
 }
 
 CnjOrdInt::~CnjOrdInt() {
-
+  NdoInt* p = inicio;
+  NdoInt* q = 0;
+  while (p != 0) {
+      q = p->sgt;
+      delete p;
+      p = q;
+  }
 }
 
 bool CnjOrdInt::insertarOrd(int x) {
@@ -44,5 +50,5 @@ CnjOrdInt& CnjOrdInt::operator/(const CnjOrdInt& b) const {
 }
 
 string CnjOrdInt::aHil() {
-   
+
 }
