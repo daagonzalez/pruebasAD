@@ -1,7 +1,7 @@
-/* 
+/*
  * File:   CnjOrdInt.cpp
  * Author: alan.calderon
- * 
+ *
  * Created on 5 de agosto de 2015, 05:37 PM
  */
 
@@ -44,5 +44,12 @@ CnjOrdInt& CnjOrdInt::operator/(const CnjOrdInt& b) const {
 }
 
 string CnjOrdInt::aHil() {
-   
+  stringstream fs;
+  NdoInt* p = inicio;
+
+  while(p != nullptr){
+    fs << p->dato << ',';
+    p = p->sgt;
+  }
+  return fs.str();
 }
