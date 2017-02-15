@@ -27,7 +27,13 @@ CnjOrdInt::CnjOrdInt(const CnjOrdInt& orig) {
 }
 
 CnjOrdInt::~CnjOrdInt() {
-
+  NdoInt* p = inicio;
+  NdoInt* q = 0;
+  while (p != 0) {
+      q = p->sgt;
+      delete p;
+      p = q;
+  }
 }
 
 bool CnjOrdInt::insertarOrd(int x) {
